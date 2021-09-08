@@ -3,7 +3,9 @@
 # Each of the ? must be replaced with a char, that is unique (so can't be same as on left or right).
 
 def solve_riddle(str):
-  return "tereexff" 
+  # Please enter your solution here
+  # ...
+  return str
 
 
 def run_tests():
