@@ -19,6 +19,6 @@ def is_correct_solution(solved_str):
   
   for i in range(len(solved_str)-1):
     if solved_str[i] == solved_str[i+1]:
-      raise RuntimeError("Solution can't contain 2 same chars, but was '" + solved_str + "'")
+      raise RuntimeError("Solution can't contain 2 same chars next to eachother, but was '" + solved_str + "'")
 
 run_tests()      
