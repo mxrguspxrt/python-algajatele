@@ -1,14 +1,15 @@
-numbers = [1, 2, 3, 4, 5, 6, 7]
+ruut1 = "X"
+ruut2 = " "
+ruut3 = " "
+ruut4 = " "
+ruut5 = "X"
+ruut6 = " "
+ruut7 = " "
+ruut8 = " "
+ruut9 = "X"
 
-sum_of_numbers = 0
-
-print("There is N numbers in numbers array: ", len(numbers))
-
-for index in range(0, len(numbers)):
-    print(numbers[index] % 2)
-    if numbers[index] % 2 == 0:
-      sum_of_numbers = sum_of_numbers + numbers[index]
-    else:
-      pass
-
-print(sum_of_numbers)
+print(ruut1 + " | " + ruut2 + " | " + ruut3)
+print("----------")
+print(ruut4 + " | " + ruut5 + " | " + ruut6)
+print("----------")
+print(ruut7 + " | " + ruut8 + " | " + ruut9)
