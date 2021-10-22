@@ -1,36 +1,27 @@
-empty_square = " "
+alfabet = ["a", "b", "c", "d", "e", "f", "g", "x", "y"]
 
-squares = [
-  empty_square, empty_square, empty_square,
-  empty_square, empty_square, empty_square,
-  empty_square, empty_square, empty_square
-]
+def character_that_is_not(to_the_left, to_the_right):
+  print("To the left is", to_the_left)
+  print("To the right is", to_the_right)
+  for char in alfabet:
+    if char != to_the_left and char != to_the_right:
+      return char
 
-def print_tic_tac_toe_table():
-  print(squares[0] + " | " + squares[1] + " | " + squares[2])
-  print("----------")
-  print(squares[3] + " | " + squares[4] + " | " + squares[5])
-  print("----------")
-  print(squares[6] + " | " + squares[7] + " | " + squares[8])
+def solve_riddle(string):
+  string_as_array = list(string)
+  new_string = []
 
-def ask_move_to_make(x_or_y):
-  move_to_make = input("Kuhu soovid lisada " + x_or_y + "?: ")
+  i = 0
+  for char in string_as_array:
+    if char != "?":
+      new_string.append(char)
+    else: 
+      to_the_left = string_as_array[i-1]
+      to_the_right = string_as_array[i+1]
+      new_char = character_that_is_not(to_the_left, to_the_right)
+      new_string.append(new_char)
+    i = i + 1
+  
+  return "".join(new_string)
 
-  move_to_make_int = int(move_to_make) - 1
-
-  if squares[move_to_make_int] != empty_square:
-    print("Cant make move, because already contains: " + squares[0])
-    return False
-  else:
-    squares[move_to_make_int] = x_or_y
-    return True
-
-
-while True:
-  while not ask_move_to_make("X"):
-    print_tic_tac_toe_table()
-  print_tic_tac_toe_table()
-  while not ask_move_to_make("Y"):
-    print_tic_tac_toe_table()
-  print_tic_tac_toe_table()
-
+print(solve_riddle("abc?abc"))
